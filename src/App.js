@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import "./App.css";
-import Board from "./Board.js";
-export default function App() {
+import React from "react";
+import OneToFifty from "./OneToFifty";
+import GlobalStyles from "./GlobalStyles";
+
+function App() {
   return (
     <>
-      <div className="header_wrapper">1to50</div>
-      <div className="board_wrapper">
-        <div className="board_con">
-          <Board />
-        </div>
-      </div>
+      <GlobalStyles></GlobalStyles>
+      <OneToFifty></OneToFifty>
     </>
   );
 }
+
+export default App;
