@@ -17,6 +17,8 @@ function OneToFifty() {
   const [nextNumbers, setNextNumbers] = useState(array2);
   const [gameFlag, setGameFlag] = useState(false);
   const [current, setCurrent] = useState(1);
+  const [newArray] = useState([]);
+  
   const handleClick = (num) => {
     if (num === current && gameFlag) {
       if (num === 50) {
@@ -26,22 +28,18 @@ function OneToFifty() {
       const index = numbers.indexOf(num);
       setNumbers((numbers) => [
         ...numbers.slice(0, index),
-        num < 26 ? nextNumbers.shift() : null,
+        num < 26 ? newArray.shift() : null,
         ...numbers.slice(index + 1),
       ]);
-      console.log(nextNumbers)
+      console.log(newArray);
 
-        // setNextNumbers((nextNumbers) => [
-        //   ...nextNumbers.slice(0, index),
-        //   nextNumbers.length > 1 ? nextNumbers.shift() : null,
-        //   ...nextNumbers.slice(index + 1),
-        // ]);
-        setCurrent((current) => current + 1);
+      setCurrent(current + 1);
     }
   };
   const startGame = () => {
     setNumbers(shuffleArray(array1));
     setNextNumbers(shuffleArray(array2));
+    numnumArray(newArray,nextNumbers);
     setCurrent(1);
     setGameFlag(true);
   };
@@ -64,6 +62,12 @@ const shuffleArray = (array) => {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+};
+const numnumArray = (newArray,nextNumbers) => {
+  for (var i = 1; i <= nextNumbers.length; i++) {
+    newArray.push(nextNumbers[i - 1]);
+    newArray.push(nextNumbers[i - 1]);
+  }
 };
 
 const Text = styled.div`
