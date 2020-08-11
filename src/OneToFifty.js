@@ -17,7 +17,6 @@ function OneToFifty() {
   const [nextNumbers, setNextNumbers] = useState(array2);
   const [gameFlag, setGameFlag] = useState(false);
   const [current, setCurrent] = useState(1);
-  const [newArray] = useState([]);
   
   const handleClick = (num) => {
     if (num === current && gameFlag) {
