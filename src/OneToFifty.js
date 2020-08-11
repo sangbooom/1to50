@@ -28,7 +28,7 @@ function OneToFifty() {
       const index = numbers.indexOf(num);
       setNumbers((numbers) => [
         ...numbers.slice(0, index),
-        num < 26 ? newArray.shift() : null,
+        num < 26 ? nextNumbers.shift() : null,
         ...numbers.slice(index + 1),
       ]);
       console.log(newArray);
@@ -39,7 +39,7 @@ function OneToFifty() {
   const startGame = () => {
     setNumbers(shuffleArray(array1));
     setNextNumbers(shuffleArray(array2));
-    numnumArray(newArray,nextNumbers);
+    // numnumArray(newArray,nextNumbers);
     setCurrent(1);
     setGameFlag(true);
   };
@@ -63,12 +63,12 @@ const shuffleArray = (array) => {
   }
   return array;
 };
-const numnumArray = (newArray,nextNumbers) => {
-  for (var i = 1; i <= nextNumbers.length; i++) {
-    newArray.push(nextNumbers[i - 1]);
-    newArray.push(nextNumbers[i - 1]);
-  }
-};
+// const numnumArray = (newArray,nextNumbers) => {
+//   for (var i = 1; i <= nextNumbers.length; i++) {
+//     newArray.push(nextNumbers[i - 1]);
+//     newArray.push(nextNumbers[i - 1]);
+//   }
+// };
 
 const Text = styled.div`
   font-size: 110px;
