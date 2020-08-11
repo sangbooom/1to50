@@ -28,10 +28,10 @@ function OneToFifty() {
       const index = numbers.indexOf(num);
       setNumbers((numbers) => [
         ...numbers.slice(0, index),
-        num < 26 ? nextNumbers.shift() : null,
+        num < 26 ? nextNumbers[current-1] : null,
         ...numbers.slice(index + 1),
       ]);
-      console.log(newArray);
+      console.log(nextNumbers);
 
       setCurrent(current + 1);
     }

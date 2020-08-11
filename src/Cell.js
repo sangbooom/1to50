@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Cell({ num, handleClick }) {
   return (
     <Container onClick={() => handleClick(num)}>
-      {num < 10 ? `0${num}` : `${num}`}
+      {num < 10 ? (`0${num}` === `0null` ? `` : `0${num}`) : num}
     </Container>
   );
 }
