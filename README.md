@@ -3,5 +3,4 @@
 ![image](https://user-images.githubusercontent.com/43921054/89748211-085b3e80-dafd-11ea-81e8-975d731ea050.png)
 
 ### :orange_book: Todo
-- 타이머기능
-- 성능개선
+- localStorage로 스코어보드 추가하기

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Board from "./Board";
+import Timer from "./Timer";
 
 let array1 = [];
 for (let i = 1; i <= 25; i++) {
@@ -17,17 +18,16 @@ function OneToFifty() {
   const [nextNumbers, setNextNumbers] = useState(array2);
   const [gameFlag, setGameFlag] = useState(false);
   const [current, setCurrent] = useState(1);
-  
+
   const handleClick = (num) => {
     if (num === current && gameFlag) {
       if (num === 50) {
-        alert("개못하네 ㅋㅋ");
         endGame();
       }
       const index = numbers.indexOf(num);
       setNumbers((numbers) => [
         ...numbers.slice(0, index),
-        num < 26 ? nextNumbers[current-1] : null,
+        num < 26 ? nextNumbers[current - 1] : null,
         ...numbers.slice(index + 1),
       ]);
       console.log(nextNumbers);
@@ -50,7 +50,11 @@ function OneToFifty() {
     <Container>
       <Text>1to50</Text>
       <Board numbers={numbers} handleClick={handleClick}></Board>
-      <StartButton onClick={startGame}>start</StartButton>
+      {gameFlag ? (
+        <Timer />
+      ) : (
+        <StartButton onClick={startGame}>시작</StartButton>
+      )}
     </Container>
   );
 }
